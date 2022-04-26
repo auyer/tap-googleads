@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "customer_id": {
+            "type": "string"
+        },
+        "campaign": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "ad_group_criterion": {
+            "type": "object",
+            "properties": {
+                "criterion_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "ad_group": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "clicks": {
+                    "type": "string"
+                },
+                "costMicros": {
+                    "type": "string"
+                },
+                "ctr": {
+                    "type": "number"
+                },
+                "averageCpc": {
+                    "type": "number"
+                },
+                "impressions": {
+                    "type": "string"
+                }
+            }
+        },
+        "segments": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -274,6 +274,47 @@ class CampaignPerformance(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "campaign_performance.json"
 
 
+class PerformanceStream(ReportsStream):
+    """PerformanceStream"""
+
+    @property
+    def gaql(self):
+        return f"""
+    SELECT 
+    segments.date, 
+    ad_group_criterion.criterion_id, 
+    campaign.id, 
+    ad_group.id, 
+    metrics.absolute_top_impression_percentage, 
+    metrics.active_view_impressions, 
+    metrics.all_conversions, 
+    metrics.all_conversions_value, 
+    metrics.clicks, 
+    metrics.conversions, 
+    metrics.conversions_value, 
+    metrics.cost_micros, 
+    metrics.gmail_forwards, 
+    metrics.gmail_saves, 
+    metrics.impressions, 
+    metrics.search_absolute_top_impression_share, 
+    metrics.search_impression_share, 
+    metrics.search_click_share, 
+    metrics.search_top_impression_share, 
+    metrics.video_views, 
+    metrics.video_quartile_p100_rate, 
+    metrics.video_quartile_p25_rate, 
+    metrics.video_quartile_p50_rate, 
+    metrics.video_quartile_p75_rate 
+    FROM keyword_view 
+    """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_performance"
+    primary_keys = ["campaign__id", "ad_group_criterion__criterion_id", "ad_group__id", "segments__date"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "performance.json"
+
+
 class CampaignPerformanceByAgeRangeAndDevice(ReportsStream):
     """Campaign Performance By Age Range and Device"""
 
