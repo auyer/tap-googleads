@@ -306,6 +306,7 @@ class PerformanceStream(ReportsStream):
     metrics.video_quartile_p50_rate, 
     metrics.video_quartile_p75_rate 
     FROM keyword_view 
+    WHERE segments.date >= {self.start_date} and segments.date <= {self.end_date}
     """
 
     records_jsonpath = "$.results[*]"
