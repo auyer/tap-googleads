@@ -15,6 +15,12 @@
                 },
                 "id": {
                     "type": "string"
+                },
+                "labels": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
                 }
             }
         }

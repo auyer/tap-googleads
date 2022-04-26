@@ -181,6 +181,7 @@ class CampaignsStream(ReportsStream):
         return """
         SELECT 
         campaign.labels, 
+        campaign.status,
         campaign.resource_name, 
         campaign.name, 
         campaign.id 
