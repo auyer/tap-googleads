@@ -9,14 +9,8 @@ from tap_googleads.streams import (
     CustomerStream,
     CampaignsStream,
     AdGroupsStream,
-    AdGroupsPerformance,
     AccessibleCustomers,
     CustomerHierarchyStream,
-    CampaignPerformance,
-    CampaignPerformanceByAgeRangeAndDevice,
-    CampaignPerformanceByGenderAndDevice,
-    CampaignPerformanceByLocation,
-    GeotargetsStream,
     PerformanceStream
 )
 
@@ -24,14 +18,8 @@ STREAM_TYPES = [
     CustomerStream,
     CampaignsStream,
     AdGroupsStream,
-    AdGroupsPerformance,
     AccessibleCustomers,
     CustomerHierarchyStream,
-    CampaignPerformance,
-    CampaignPerformanceByAgeRangeAndDevice,
-    CampaignPerformanceByGenderAndDevice,
-    CampaignPerformanceByLocation,
-    GeotargetsStream,
     PerformanceStream
 ]
 
