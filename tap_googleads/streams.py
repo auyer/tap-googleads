@@ -179,7 +179,13 @@ class CampaignsStream(ReportsStream):
     @property
     def gaql(self):
         return """
-        SELECT campaign.id, campaign.name FROM campaign ORDER BY campaign.id
+        SELECT 
+        campaign.advertising_channel_sub_type, 
+        campaign.resource_name, 
+        campaign.name, 
+        campaign.id 
+        FROM campaign 
+        ORDER BY campaign.id
         """
 
     records_jsonpath = "$.results[*]"

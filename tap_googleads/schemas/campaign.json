@@ -1,13 +1,16 @@
 {
     "type": "object",
     "properties": {
-                "customer_id": {
-                    "type": "string"
-                },
+        "customer_id": {
+            "type": "string"
+        },
         "campaign": {
             "type": "object",
             "properties": {
                 "resourceName": {
+                    "type": "string"
+                },
+                "advertisingChannelSubType": {
                     "type": "string"
                 },
                 "name": {
