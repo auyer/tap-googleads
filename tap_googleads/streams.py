@@ -180,7 +180,7 @@ class CampaignsStream(ReportsStream):
     def gaql(self):
         return """
         SELECT 
-        campaign.advertising_channel_sub_type, 
+        campaign.labels, 
         campaign.resource_name, 
         campaign.name, 
         campaign.id 

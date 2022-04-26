@@ -10,9 +10,6 @@
                 "resourceName": {
                     "type": "string"
                 },
-                "advertising_channel_sub_type": {
-                    "type": "string"
-                },
                 "name": {
                     "type": "string"
                 },
