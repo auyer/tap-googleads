@@ -1,22 +1,28 @@
 {
     "type": "object",
     "properties": {
-        "adGroupAsset": {
+        "adGroupAdAssetView": {
             "type": "object",
             "properties": {
-                "resourceName": {
-                    "type": "string"
-                },
-                "adGroup": {
+                "adGroupAd": {
                     "type": "string"
                 },
                 "asset": {
                     "type": "string"
                 },
+                "enabled": {
+                    "type": "string"
+                },
                 "fieldType": {
                     "type": "string"
                 },
-                "status": {
+                "performance_label": {
+                    "type": "string"
+                },
+                "policySummary": {
+                    "type": "string"
+                },
+                "resourceName": {
                     "type": "string"
                 }
             }
