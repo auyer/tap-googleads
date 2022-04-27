@@ -285,7 +285,6 @@ class KeywordViewStream(ReportsStream):
     ad_group_criterion.criterion_id, 
     ad_group.id 
     FROM keyword_view 
-
     """
 
     records_jsonpath = "$.results[*]"
@@ -293,3 +292,84 @@ class KeywordViewStream(ReportsStream):
     primary_keys = None
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "keyword.json"
+
+
+
+
+class GeographicStream(ReportsStream):
+    """Geographic View Stream"""
+
+    @property
+    def gaql(self):
+        return f"""
+    SELECT 
+    segments.date, 
+    campaign.id, 
+    ad_group.id, 
+    geographic_view.country_criterion_id, 
+    geographic_view.location_type, 
+    geographic_view.resource_name, 
+    metrics.absolute_top_impression_percentage, 
+    metrics.all_conversions, 
+    metrics.all_conversions_value, 
+    metrics.clicks, 
+    metrics.conversions, 
+    metrics.conversions_value, 
+    metrics.cost_micros, 
+    metrics.impressions, 
+    metrics.view_through_conversions 
+    FROM geographic_view 
+
+    """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_geographic"
+    primary_keys = None
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "geo.json"
+
+
+
+class ExtensionsStream(ReportsStream):
+    """Geographic View Stream"""
+
+    @property
+    def gaql(self):
+        return f"""
+    SELECT
+    extension_feed_item.extension_type,
+    campaign.id,
+    ad_group.id
+    FROM extension_feed_item
+    """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_extensions"
+    primary_keys = None
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "extensions.json"
+
+
+class ConversionStream(ReportsStream):
+    """Geographic View Stream"""
+
+    @property
+    def gaql(self):
+        return f"""
+    SELECT 
+    segments.conversion_action, 
+    segments.date, 
+    campaign.name, 
+    ad_group.name, 
+    metrics.all_conversions, 
+    metrics.all_conversions_value, 
+    metrics.conversions, 
+    metrics.conversions_value 
+    FROM ad_group 
+    """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_conversions"
+    primary_keys = None
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "conversions.json"

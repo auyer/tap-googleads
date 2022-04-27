@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "adGroupAdAssetView": {
+            "type": "object",
+            "properties": {
+                "adGroupAd": {
+                    "type": "string"
+                },
+                "asset": {
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "string"
+                },
+                "fieldType": {
+                    "type": "string"
+                },
+                "performance_label": {
+                    "type": "string"
+                },
+                "policySummary": {
+                    "type": "string"
+                },
+                "resourceName": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

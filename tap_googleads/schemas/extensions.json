@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "adGroupAsset": {
+            "type": "object",
+            "properties": {
+                "resourceName": {
+                    "type": "string"
+                },
+                "adGroup": {
+                    "type": "string"
+                },
+                "asset": {
+                    "type": "string"
+                },
+                "fieldType": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
