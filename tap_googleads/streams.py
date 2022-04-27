@@ -209,14 +209,16 @@ class AdStream(ReportsStream):
     @property
     def gaql(self):
         return """
-       SELECT 
+        SELECT 
         ad_group_ad_asset_view.ad_group_ad, 
         ad_group_ad_asset_view.asset, 
         ad_group_ad_asset_view.enabled, 
         ad_group_ad_asset_view.field_type, 
         ad_group_ad_asset_view.performance_label, 
         ad_group_ad_asset_view.policy_summary, 
-        ad_group_ad_asset_view.resource_name
+        ad_group_ad_asset_view.resource_name, 
+        ad_group.id, 
+        ad_group_ad.ad.id 
         FROM ad_group_ad_asset_view 
        """
 
@@ -270,3 +272,24 @@ class PerformanceStream(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "performance.json"
 
 
+
+
+class KeywordViewStream(ReportsStream):
+    """Keyword View Stream"""
+
+    @property
+    def gaql(self):
+        return f"""
+    SELECT 
+    keyword_view.resource_name, 
+    ad_group_criterion.criterion_id, 
+    ad_group.id 
+    FROM keyword_view 
+
+    """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_keyword_view"
+    primary_keys = None
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "keyword.json"
