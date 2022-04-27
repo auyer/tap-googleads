@@ -309,7 +309,6 @@ class GeographicStream(ReportsStream):
     geographic_view.country_criterion_id, 
     geographic_view.location_type, 
     geographic_view.resource_name, 
-    metrics.absolute_top_impression_percentage, 
     metrics.all_conversions, 
     metrics.all_conversions_value, 
     metrics.clicks, 
