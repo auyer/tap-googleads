@@ -210,20 +210,17 @@ class AdStream(ReportsStream):
     def gaql(self):
         return """
         SELECT 
-        ad_group_ad_asset_view.ad_group_ad, 
-        ad_group_ad_asset_view.asset, 
-        ad_group_ad_asset_view.enabled, 
-        ad_group_ad_asset_view.field_type, 
-        ad_group_ad_asset_view.performance_label, 
-        ad_group_ad_asset_view.policy_summary, 
-        ad_group_ad_asset_view.resource_name, 
-        ad_group.id
-        FROM ad_group_ad_asset_view 
+        ad_group_ad.ad.id, 
+        ad_group.id, 
+        ad_group_ad.status, 
+        ad_group_ad.policy_summary.review_status, 
+        ad_group_ad.ad.type 
+        FROM ad_group_ad 
        """
 
     records_jsonpath = "$.results[*]"
     name = "stream_ads"
-    primary_keys = ["ad_group_ad_asset_view__ad_group_ad"]
+    primary_keys = ["ad_group_ad__ad__id"]
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad.json"
 
