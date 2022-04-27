@@ -331,11 +331,21 @@ class ExtensionsStream(ReportsStream):
     @property
     def gaql(self):
         return f"""
-    SELECT
-    extension_feed_item.extension_type,
-    campaign.id,
-    ad_group.id
+    SELECT 
+    extension_feed_item.extension_type, 
+    ad_group.id, 
+    campaign.id, 
+    segments.date, 
+    metrics.all_conversions, 
+    metrics.clicks, 
+    metrics.conversions, 
+    metrics.impressions, 
+    metrics.cost_micros, 
+    metrics.conversions_value, 
+    metrics.all_conversions_value, 
+    metrics.phone_calls 
     FROM extension_feed_item
+    WHERE segments.date >= {self.start_date} and segments.date <= {self.end_date}
     """
 
     records_jsonpath = "$.results[*]"

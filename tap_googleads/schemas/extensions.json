@@ -24,6 +24,43 @@
                     "type": "string"
                 }
             }
+        },
+        "segments": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "allConversions": {
+                    "type": "string"
+                },
+                "clicks": {
+                    "type": "string"
+                },
+                "conversions": {
+                    "type": "string"
+                },
+                "impressions": {
+                    "type": "string"
+                },
+                "costMicros": {
+                    "type": "string"
+                },
+                "conversionsValue": {
+                    "type": "string"
+                },
+                "allConversionsValue": {
+                    "type": "string"
+                },
+                "phoneCalls": {
+                    "type": "string"
+                }
+            }
         }
     }
 }
