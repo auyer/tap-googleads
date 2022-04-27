@@ -1,22 +1,46 @@
 {
     "type": "object",
     "properties": {
-        "adGroupAsset": {
+        "campaign": {
             "type": "object",
             "properties": {
-                "resourceName": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "adGroup": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "all_conversions": {
                     "type": "string"
                 },
-                "adGroup": {
+                "all_conversions_value": {
                     "type": "string"
                 },
-                "asset": {
+                "conversions": {
+                    "type": "number"
+                },
+                "conversions_value": {
+                    "type": "number"
+                }
+            }
+        },
+        "segments": {
+            "type": "object",
+            "properties": {
+                "conversion_action": {
                     "type": "string"
                 },
-                "fieldType": {
-                    "type": "string"
-                },
-                "status": {
+                "date": {
                     "type": "string"
                 }
             }
