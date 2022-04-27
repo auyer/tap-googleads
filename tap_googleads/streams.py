@@ -318,7 +318,7 @@ class GeographicStream(ReportsStream):
     metrics.impressions, 
     metrics.view_through_conversions 
     FROM geographic_view 
-
+    WHERE segments.date >= {self.start_date} and segments.date <= {self.end_date}
     """
 
     records_jsonpath = "$.results[*]"
@@ -365,6 +365,7 @@ class ConversionStream(ReportsStream):
     metrics.conversions, 
     metrics.conversions_value 
     FROM ad_group 
+    WHERE segments.date >= {self.start_date} and segments.date <= {self.end_date}
     """
 
     records_jsonpath = "$.results[*]"
