@@ -78,6 +78,18 @@
                 },
                 "videoViews": {
                     "type": "string"
+                },
+                "videoQuartileP100Rate": {
+                    "type": "string"
+                },
+                "videoQuartileP25Rate": {
+                    "type": "string"
+                },
+                "videoQuartileP50Rate": {
+                    "type": "string"
+                },
+                "videoQuartileP75Rate": {
+                    "type": "string"
                 }
             }
         },
