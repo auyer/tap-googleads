@@ -22,7 +22,7 @@ class CustomerStream(GoogleAdsStream):
         return "/customers/" + self.config["customer_id"]
 
     name = "stream_customers"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "customer.json"
 
@@ -32,7 +32,7 @@ class AccessibleCustomers(GoogleAdsStream):
 
     path = "/customers:listAccessibleCustomers"
     name = "stream_accessible_customers"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     # TODO add an assert for one record
     #    schema_filepath = SCHEMAS_DIR / "customer.json"
@@ -84,7 +84,7 @@ class CustomerHierarchyStream(GoogleAdsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_customer_hierarchy"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     parent_stream_type = AccessibleCustomers
     schema = th.PropertiesList(
@@ -175,7 +175,7 @@ class CampaignsStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_campaign"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "campaign.json"
 
@@ -198,7 +198,7 @@ class AdGroupAssetStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_adgroups"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad_group.json"
 
@@ -220,7 +220,7 @@ class AdStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_ads"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad.json"
 
@@ -263,7 +263,7 @@ class PerformanceStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_performance"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "performance.json"
 
@@ -285,7 +285,7 @@ class KeywordViewStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_keyword_view"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "keyword.json"
 
@@ -319,7 +319,7 @@ class GeographicStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_geographic"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "geo.json"
 
@@ -340,7 +340,7 @@ class ExtensionsStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_extensions"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "extensions.json"
 
@@ -366,6 +366,6 @@ class ConversionStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_conversions"
-    primary_keys = None
+    primary_keys = []
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "conversions.json"
