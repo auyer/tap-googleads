@@ -4,9 +4,6 @@
         "adGroupAsset": {
             "type": "object",
             "properties": {
-                "resourceName": {
-                    "type": "string"
-                },
                 "adGroup": {
                     "type": "string"
                 },

@@ -22,6 +22,9 @@
                 "advertisingChannelType": {
                     "type": "string"
                 },
+                "advertisingChannelSubType": {
+                    "type": "string"
+                },
                 "servingStatus": {
                     "type": "string"
                 },

@@ -190,8 +190,7 @@ class AdGroupAssetStream(ReportsStream):
        SELECT 
         ad_group_asset.ad_group, 
         ad_group_asset.asset, 
-        ad_group_asset.field_type, 
-        ad_group_asset.resource_name, 
+        ad_group_asset.field_type,
         ad_group_asset.status
         FROM ad_group_asset 
        """
