@@ -21,16 +21,16 @@
             "type": "object",
             "properties": {
                 "allConversions": {
-                    "type": "string"
+                    "type": "double"
                 },
                 "allConversionsValue": {
-                    "type": "string"
+                    "type": "double"
                 },
                 "conversions": {
-                    "type": "number"
+                    "type": "double"
                 },
                 "conversionsValue": {
-                    "type": "number"
+                    "type": "double"
                 }
             }
         },
