@@ -216,8 +216,7 @@ class AdStream(ReportsStream):
         ad_group_ad_asset_view.field_type, 
         ad_group_ad_asset_view.performance_label, 
         ad_group_ad_asset_view.policy_summary, 
-        ad_group_ad_asset_view.resource_name, 
-        ad_group.id
+        ad_group_ad_asset_view.resource_name
         FROM ad_group_ad_asset_view 
        """
 
