@@ -26,6 +26,14 @@
                     "type": "string"
                 }
             }
+        },
+        "ad_group": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
         }
     }
 }

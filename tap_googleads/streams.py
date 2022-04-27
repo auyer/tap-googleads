@@ -217,14 +217,13 @@ class AdStream(ReportsStream):
         ad_group_ad_asset_view.performance_label, 
         ad_group_ad_asset_view.policy_summary, 
         ad_group_ad_asset_view.resource_name, 
-        ad_group.id, 
-        ad_group_ad.ad.id 
+        ad_group.id
         FROM ad_group_ad_asset_view 
        """
 
     records_jsonpath = "$.results[*]"
     name = "stream_ads"
-    primary_keys = None
+    primary_keys = ["ad_group_ad_asset_view__ad_group_ad"]
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad.json"
 
