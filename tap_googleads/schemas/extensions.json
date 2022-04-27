@@ -1,22 +1,26 @@
 {
     "type": "object",
     "properties": {
-        "adGroupAsset": {
+        "extensionFeedItem": {
             "type": "object",
             "properties": {
-                "resourceName": {
+                "extensionType": {
                     "type": "string"
-                },
-                "adGroup": {
+                }
+            }
+        },
+        "campaign": {
+            "type": "object",
+            "properties": {
+                "id": {
                     "type": "string"
-                },
-                "asset": {
-                    "type": "string"
-                },
-                "fieldType": {
-                    "type": "string"
-                },
-                "status": {
+                }
+            }
+        },
+        "adGroup": {
+            "type": "object",
+            "properties": {
+                "id": {
                     "type": "string"
                 }
             }

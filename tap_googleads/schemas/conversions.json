@@ -20,16 +20,16 @@
         "metrics": {
             "type": "object",
             "properties": {
-                "all_conversions": {
+                "allConversions": {
                     "type": "string"
                 },
-                "all_conversions_value": {
+                "allConversionsValue": {
                     "type": "string"
                 },
                 "conversions": {
                     "type": "number"
                 },
-                "conversions_value": {
+                "conversionsValue": {
                     "type": "number"
                 }
             }
@@ -37,7 +37,7 @@
         "segments": {
             "type": "object",
             "properties": {
-                "conversion_action": {
+                "conversionAction": {
                     "type": "string"
                 },
                 "date": {

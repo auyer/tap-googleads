@@ -1,28 +1,69 @@
 {
     "type": "object",
     "properties": {
-        "adGroupAdAssetView": {
+        "segments": {
             "type": "object",
             "properties": {
-                "adGroupAd": {
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "campaign": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "adGroup": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "geographicView": {
+            "type": "object",
+            "properties": {
+                "countryCriterionId": {
                     "type": "string"
                 },
-                "asset": {
-                    "type": "string"
-                },
-                "enabled": {
-                    "type": "string"
-                },
-                "fieldType": {
-                    "type": "string"
-                },
-                "performance_label": {
-                    "type": "string"
-                },
-                "policySummary": {
+                "locationType": {
                     "type": "string"
                 },
                 "resourceName": {
+                    "type": "string"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "allConversions": {
+                    "type": "string"
+                },
+                "allConversionsValue": {
+                    "type": "string"
+                },
+                "clicks": {
+                    "type": "string"
+                },
+                "conversions": {
+                    "type": "number"
+                },
+                "conversionsValue": {
+                    "type": "number"
+                },
+                "costMicros": {
+                    "type": "string"
+                },
+                "impressions": {
+                    "type": "string"
+                },
+                "viewThroughConversions": {
                     "type": "string"
                 }
             }
