@@ -12,7 +12,7 @@ from tap_googleads.streams import (
     AccessibleCustomers,
     CustomerHierarchyStream,
     PerformanceStream,
-    AdAssetStream
+    AdStream
 )
 
 STREAM_TYPES = [
@@ -22,7 +22,7 @@ STREAM_TYPES = [
     AccessibleCustomers,
     CustomerHierarchyStream,
     PerformanceStream,
-    AdAssetStream
+    AdStream
 ]
 
 

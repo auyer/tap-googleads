@@ -203,7 +203,7 @@ class AdGroupAssetStream(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "ad_group.json"
 
 
-class AdAssetStream(ReportsStream):
+class AdStream(ReportsStream):
     """Define custom stream."""
 
     @property
@@ -223,7 +223,7 @@ class AdAssetStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_ads"
-    primary_keys = ["ad_group_ad_asset_view__asset"]
+    primary_keys = None
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad.json"
 
@@ -266,7 +266,7 @@ class PerformanceStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_performance"
-    primary_keys = ["campaign__id", "ad_group_criterion__criterion_id", "ad_group__id", "segments__date"]
+    primary_keys = None
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "performance.json"
 
