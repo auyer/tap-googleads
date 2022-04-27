@@ -21,6 +21,32 @@
                 },
                 "status": {
                     "type": "string"
+                },
+                "advertisingChannelType": {
+                    "type": "string"
+                },
+                "servingStatus": {
+                    "type": "string"
+                },
+                "biddingStrategyType": {
+                    "type": "string"
+                },
+                "geoTargetTypeSetting": {
+                    "type": "object",
+                    "properties": {
+                        "positiveGeoTargetType": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "campaignBudget": {
+                    "type": "string"
+                },
+                "startDate": {
+                    "type": "string"
+                },
+                "endDate": {
+                    "type": "string"
                 }
             }
         }

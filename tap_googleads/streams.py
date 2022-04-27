@@ -180,7 +180,7 @@ class CampaignsStream(ReportsStream):
     schema_filepath = SCHEMAS_DIR / "campaign.json"
 
 
-class AdGroupsStream(ReportsStream):
+class AdGroupAssetStream(ReportsStream):
     """Define custom stream."""
 
     @property
@@ -198,9 +198,59 @@ class AdGroupsStream(ReportsStream):
 
     records_jsonpath = "$.results[*]"
     name = "stream_adgroups"
-    primary_keys = ["ad_group__id"]
+    primary_keys = ["ad_group_asset__ad_group"]
     replication_key = None
     schema_filepath = SCHEMAS_DIR / "ad_group.json"
+
+
+
+class AdGroupAssetStream(ReportsStream):
+    """Define custom stream."""
+
+    @property
+    def gaql(self):
+        return """
+       SELECT 
+        ad_group_asset.ad_group, 
+        ad_group_asset.asset, 
+        ad_group_asset.field_type, 
+        ad_group_asset.resource_name, 
+        ad_group_asset.status
+        FROM ad_group_asset 
+       """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_adgroups"
+    primary_keys = ["ad_group_asset__ad_group"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "ad_group.json"
+
+
+class AdAssetStream(ReportsStream):
+    """Define custom stream."""
+
+    @property
+    def gaql(self):
+        return """
+       SELECT 
+        ad_group_ad_asset_view.ad_group_ad, 
+        ad_group_ad_asset_view.asset, 
+        ad_group_ad_asset_view.enabled, 
+        ad_group_ad_asset_view.field_type, 
+        ad_group_ad_asset_view.performance_label, 
+        ad_group_ad_asset_view.policy_summary, 
+        ad_group_ad_asset_view.resource_name, 
+        ad_group.id
+        FROM ad_group_ad_asset_view 
+       """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_ads"
+    primary_keys = ["ad_group_ad_asset_view__asset"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "ad.json"
+
+
 
 
 
