@@ -37,7 +37,7 @@
             "type": "object",
             "properties": {
                 "allConversions": {
-                    "type": "string"
+                    "type": "double"
                 },
                 "clicks": {
                     "type": "string"
@@ -52,10 +52,10 @@
                     "type": "string"
                 },
                 "conversionsValue": {
-                    "type": "string"
+                    "type": "double"
                 },
                 "allConversionsValue": {
-                    "type": "string"
+                    "type": "double"
                 },
                 "phoneCalls": {
                     "type": "string"
