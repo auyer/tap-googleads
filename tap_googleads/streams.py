@@ -237,7 +237,7 @@ class PerformanceStreamKeyword(ReportsStream):
         return f"""
     SELECT 
     segments.date, 
-    ad_group_criterion.criterion_id as keyword.id, 
+    ad_group_criterion.criterion_id, 
     campaign.id, 
     ad_group.id, 
     metrics.absolute_top_impression_percentage, 
