@@ -303,7 +303,7 @@ class PerformanceStreamAd(ReportsStream):
     metrics.video_quartile_p25_rate, 
     metrics.video_quartile_p50_rate, 
     metrics.video_quartile_p75_rate 
-    FROM keyword_view 
+    FROM ad_group_ad 
     WHERE segments.date >= {self.start_date} and segments.date <= {self.end_date}
     """
 
