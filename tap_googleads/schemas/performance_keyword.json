@@ -1,0 +1,105 @@
+{
+    "type": "object",
+    "properties": {
+        "campaign": {
+            "type": "object",
+            "properties": {
+                "resourceName": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "adGroupCriterion": {
+            "type": "object",
+            "properties": {
+                "criterionId": {
+                    "type": "string"
+                }
+            }
+        },
+        "adGroup": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            }
+        },
+        "metrics": {
+            "type": "object",
+            "properties": {
+                "absoluteTopImpressionPercentage": {
+                    "type": "string"
+                },
+                "activeViewImpressions": {
+                    "type": "string"
+                },
+                "allConversions": {
+                    "type": "number"
+                },
+                "allConversionsValue": {
+                    "type": "number"
+                },
+                "clicks": {
+                    "type": "string"
+                },
+                "conversions": {
+                    "type": "string"
+                },
+                "conversionsValue": {
+                    "type": "string"
+                },
+                "costMicros": {
+                    "type": "string"
+                },
+                "gmailForwards": {
+                    "type": "string"
+                },
+                "gmailSaves": {
+                    "type": "string"
+                },
+                "impressions": {
+                    "type": "string"
+                },
+                "searchAbsoluteTopImpressionShare": {
+                    "type": "string"
+                },
+                "searchImpressionShare": {
+                    "type": "string"
+                },
+                "searchClickShare": {
+                    "type": "string"
+                },
+                "searchTopImpressionShare": {
+                    "type": "string"
+                },
+                "videoViews": {
+                    "type": "string"
+                },
+                "videoQuartileP100Rate": {
+                    "type": "string"
+                },
+                "videoQuartileP25Rate": {
+                    "type": "string"
+                },
+                "videoQuartileP50Rate": {
+                    "type": "string"
+                },
+                "videoQuartileP75Rate": {
+                    "type": "string"
+                }
+            }
+        },
+        "segments": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

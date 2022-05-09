@@ -12,11 +12,16 @@
                 }
             }
         },
-        "adGroupCriterion": {
+        "adGroupAd": {
             "type": "object",
             "properties": {
-                "criterion_id": {
-                    "type": "string"
+                "ad": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },

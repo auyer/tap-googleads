@@ -1,19 +1,22 @@
 {
     "type": "object",
     "properties": {
-        "keywordView": {
-            "type": "object",
-            "properties": {
-                "resourceName": {
-                    "type": "string"
-                }
-            }
-        },
-        "ad_group_criterion": {
+        "adGroupCriterion": {
             "type": "object",
             "properties": {
                 "criterionId": {
                     "type": "string"
+                },
+                "keyword": {
+                    "type": "object",
+                    "properties": {
+                        "text": {
+                            "type": "string"
+                        },
+                        "matchType": {
+                            "type": "string"
+                        }
+                    }
                 }
             }
         },

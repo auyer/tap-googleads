@@ -1,19 +1,22 @@
 {
     "type": "object",
     "properties": {
-        "adGroupAsset": {
+        "adGroup": {
             "type": "object",
             "properties": {
-                "adGroup": {
+                "id": {
                     "type": "string"
                 },
-                "asset": {
-                    "type": "string"
-                },
-                "fieldType": {
+                "name": {
                     "type": "string"
                 },
                 "status": {
+                    "type": "string"
+                },
+                "labels": {
+                    "type": "string"
+                },
+                "type": {
                     "type": "string"
                 }
             }

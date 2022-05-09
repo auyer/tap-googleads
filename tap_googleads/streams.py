@@ -186,13 +186,16 @@ class AdGroupAssetStream(ReportsStream):
 
     @property
     def gaql(self):
+        #add ad group id seperated from ad_group
+        #add ad group name (ad_group.name)
         return """
-       SELECT 
-        ad_group_asset.ad_group, 
-        ad_group_asset.asset, 
-        ad_group_asset.field_type,
-        ad_group_asset.status
-        FROM ad_group_asset 
+        SELECT 
+        ad_group.id, 
+        ad_group.name, 
+        ad_group.status, 
+        ad_group.labels, 
+        ad_group.type 
+        FROM ad_group 
        """
 
     records_jsonpath = "$.results[*]"
@@ -210,7 +213,7 @@ class AdStream(ReportsStream):
         return """
         SELECT 
         ad_group_ad.ad.id, 
-        ad_group.id, 
+        ad_group_ad.ad.name,
         ad_group_ad.status, 
         ad_group_ad.policy_summary.review_status, 
         ad_group_ad.ad.type 
@@ -225,15 +228,16 @@ class AdStream(ReportsStream):
 
 
 
-class PerformanceStream(ReportsStream):
-    """PerformanceStream"""
+
+class PerformanceStreamKeyword(ReportsStream):
+    """PerformanceStreamKeyword"""
 
     @property
     def gaql(self):
         return f"""
     SELECT 
     segments.date, 
-    ad_group_criterion.criterion_id, 
+    ad_group_criterion.criterion_id as keyword.id, 
     campaign.id, 
     ad_group.id, 
     metrics.absolute_top_impression_percentage, 
@@ -261,11 +265,53 @@ class PerformanceStream(ReportsStream):
     """
 
     records_jsonpath = "$.results[*]"
-    name = "stream_performance"
+    name = "stream_performance_keyword"
     primary_keys = []
     replication_key = None
-    schema_filepath = SCHEMAS_DIR / "performance.json"
+    schema_filepath = SCHEMAS_DIR / "performance_keyword.json"
 
+
+
+class PerformanceStreamAd(ReportsStream):
+    """PerformanceStreamAd"""
+
+    @property
+    def gaql(self):
+        return f"""
+    SELECT 
+    segments.date, 
+    ad_group_ad.ad.id,
+    campaign.id, 
+    ad_group.id, 
+    metrics.absolute_top_impression_percentage, 
+    metrics.active_view_impressions, 
+    metrics.all_conversions, 
+    metrics.all_conversions_value, 
+    metrics.clicks, 
+    metrics.conversions, 
+    metrics.conversions_value, 
+    metrics.cost_micros, 
+    metrics.gmail_forwards, 
+    metrics.gmail_saves, 
+    metrics.impressions, 
+    metrics.search_absolute_top_impression_share, 
+    metrics.search_impression_share, 
+    metrics.search_click_share, 
+    metrics.search_top_impression_share, 
+    metrics.video_views, 
+    metrics.video_quartile_p100_rate, 
+    metrics.video_quartile_p25_rate, 
+    metrics.video_quartile_p50_rate, 
+    metrics.video_quartile_p75_rate 
+    FROM keyword_view 
+    WHERE segments.date >= {self.start_date} and segments.date <= {self.end_date}
+    """
+
+    records_jsonpath = "$.results[*]"
+    name = "stream_performance_ad"
+    primary_keys = []
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "performance_ad.json"
 
 
 
@@ -275,12 +321,13 @@ class KeywordViewStream(ReportsStream):
     @property
     def gaql(self):
         return f"""
-    SELECT 
-    keyword_view.resource_name, 
-    ad_group_criterion.criterion_id, 
-    ad_group.id 
-    FROM keyword_view 
-    """
+        SELECT
+        ad_group.id,
+        ad_group_criterion.criterion_id,
+        ad_group_criterion.keyword.text,
+        ad_group_criterion.keyword.match_type
+        FROM ad_group_criterion
+        """
 
     records_jsonpath = "$.results[*]"
     name = "stream_keyword_view"
