@@ -213,7 +213,6 @@ class AdStream(ReportsStream):
         return """
         SELECT 
         ad_group_ad.ad.id, 
-        ad_group_ad.ad.name,
         ad_group_ad.status, 
         ad_group_ad.policy_summary.review_status, 
         ad_group_ad.ad.type 

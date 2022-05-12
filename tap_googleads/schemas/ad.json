@@ -21,9 +21,6 @@
                         "id": {
                             "type": "int"
                         },
-                        "name": {
-                            "type": "string"
-                        },
                         "type": {
                             "type": "string"
                         }
