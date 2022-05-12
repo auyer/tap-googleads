@@ -280,6 +280,7 @@ class PerformanceStreamAd(ReportsStream):
         return f"""
     SELECT 
     segments.date, 
+    segments.ad_network_type,
     ad_group_ad.ad.id,
     campaign.id, 
     ad_group.id, 

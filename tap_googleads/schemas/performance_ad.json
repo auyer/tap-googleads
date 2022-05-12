@@ -103,6 +103,9 @@
             "properties": {
                 "date": {
                     "type": "string"
+                },
+                "adNetworkType": {
+                    "type": "string"
                 }
             }
         }
